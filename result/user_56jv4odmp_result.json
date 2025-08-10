@@ -1,0 +1,78 @@
+{
+  "userId": "user_56jv4odmp",
+  "studyDate": "2025-08-10T12:53:38.581Z",
+  "results": [
+    {
+      "imageName": "26.png",
+      "ranking": {
+        "d": 2,
+        "a": 4,
+        "b": 3,
+        "c": 1
+      }
+    },
+    {
+      "imageName": "54.png",
+      "ranking": {
+        "a": 2,
+        "c": 4,
+        "b": 3,
+        "d": 1
+      }
+    },
+    {
+      "imageName": "63.png",
+      "ranking": {
+        "c": 4,
+        "b": 3,
+        "a": 1,
+        "d": 2
+      }
+    },
+    {
+      "imageName": "12.png",
+      "ranking": {
+        "d": 2,
+        "c": 3,
+        "b": 1,
+        "a": 4
+      }
+    },
+    {
+      "imageName": "01.png",
+      "ranking": {
+        "b": 1,
+        "a": 4,
+        "c": 3,
+        "d": 2
+      }
+    },
+    {
+      "imageName": "00.png",
+      "ranking": {
+        "d": 2,
+        "c": 4,
+        "b": 1,
+        "a": 3
+      }
+    },
+    {
+      "imageName": "51.png",
+      "ranking": {
+        "d": 1,
+        "c": 2,
+        "b": 3,
+        "a": 4
+      }
+    },
+    {
+      "imageName": "49.png",
+      "ranking": {
+        "b": 4,
+        "a": 3,
+        "d": 1,
+        "c": 2
+      }
+    }
+  ]
+}

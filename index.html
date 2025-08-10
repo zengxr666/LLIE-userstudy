@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图像增强方法用户研究</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="study-container">
+        <div id="header">
+            <h1>图像增强方法用户研究</h1>
+            <p>请为下面四张图像的增强效果进行排序。<b>1代表最好，4代表最差</b>。请不要选择相同的排名。</p>
+            <p>点击任意一张图片可以放大所有图片进行对比，再次点击可以复原。</p>
+        </div>
+
+        <div id="progress-indicator"></div>
+
+        <div id="image-grid">
+            <!-- 图像容器将由JavaScript动态生成 -->
+        </div>
+
+        <div id="navigation">
+            <button id="next-btn" disabled>下一组</button>
+        </div>
+    </div>
+
+    <div id="completion-screen" style="display: none;">
+        <h1>研究完成！</h1>
+        <p>非常感谢您的参与。您的结果已准备好，请点击下方的按钮下载结果文件。</p>
+        <p>您的用户ID是: <b id="user-id-display"></b></p>
+        <button id="download-btn">下载结果</button>
+    </div>
+
+    <!-- 放大对比的遮罩层 -->
+    <div id="zoom-overlay" style="display: none;">
+        <div id="zoom-grid">
+             <!-- 放大的图像将由JavaScript动态生成 -->
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
