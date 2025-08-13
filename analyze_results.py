@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # --- Configuration ---
 RESULT_DIR = 'result'
-METHODS = ['a', 'b', 'c', 'd']
+METHODS = ['GSAD', 'RetinexFormer', 'HVI', 'Ours']
 
 def parse_results(file_path):
     """
