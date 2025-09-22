@@ -4,7 +4,7 @@ import json
 # --- 配置 ---
 # 选择一个基准文件夹来扫描图像文件。
 # 我们假设所有其他方法文件夹 (b, c, d) 都有相同的图像文件。
-BASE_IMAGE_FOLDER = 'imgs/a'
+BASE_IMAGE_FOLDER = 'imgs/A'
 
 # 输出的清单文件名
 OUTPUT_FILE = 'imagelist.json'

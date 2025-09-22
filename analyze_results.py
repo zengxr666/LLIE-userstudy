@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # --- Configuration ---
 RESULT_DIR = 'result'
-METHODS = ['GSAD', 'RetinexFormer', 'CID', 'Ours','LightenDiff']
+METHODS = ['GSAD', 'RetinexFormer', 'CID', 'Ours', 'LightenDiff', 'Method6']
 
 def parse_results(file_path):
     """
@@ -77,11 +77,11 @@ def analyze_and_plot(df, title_prefix):
     # --- 2. Calculate and Plot Rank Distribution ---
     rank_counts = pd.crosstab(df['method'], df['rank'])
     
-    # Ensure all rank columns (1, 2, 3, 4) exist, filling with 0 if necessary
-    for rank_val in [1, 2, 3, 4]:
+    # Ensure all rank columns (1, 2, 3, 4, 5, 6) exist, filling with 0 if necessary
+    for rank_val in [1, 2, 3, 4, 5, 6]:
         if rank_val not in rank_counts.columns:
             rank_counts[rank_val] = 0
-    rank_counts = rank_counts.reindex(columns=[1, 2, 3, 4]) # Ensure order
+    rank_counts = rank_counts.reindex(columns=[1, 2, 3, 4, 5, 6]) # Ensure order
 
     # Convert counts to percentages
     rank_percentages = rank_counts.div(rank_counts.sum(axis=1), axis=0) * 100
@@ -96,8 +96,10 @@ def analyze_and_plot(df, title_prefix):
     colors = {
         1: '#2ca02c',  # Vivid Green (Rank 1)
         2: '#98df8a',  # Light Green (Rank 2)
-        3: '#ff7f0e',  # Orange (Rank 3)
-        4: '#d62728'   # Red (Rank 4)
+        3: '#ffbb78',  # Light Orange (Rank 3)
+        4: '#ff7f0e',  # Orange (Rank 4)
+        5: '#ff9999',  # Light Red (Rank 5)
+        6: '#d62728'   # Red (Rank 6)
     }
     
     # Plotting the DataFrame directly. The index ('method') becomes the x-axis groups.

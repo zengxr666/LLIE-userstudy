@@ -229,7 +229,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- 1. CONFIGURATION ---
-    const METHODS = ['A', 'B', 'C', 'D'];
+    const METHODS = ['A', 'B', 'C', 'D', 'E', 'F'];
     const IMAGE_LIST_URL = 'imagelist.json';
 
     // --- 2. GLOBAL VARIABLES & DOM ELEMENTS ---
@@ -284,6 +284,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <label><input type="radio" name="rank-${method}" value="2"> 2</label>
                 <label><input type="radio" name="rank-${method}" value="3"> 3</label>
                 <label><input type="radio" name="rank-${method}" value="4"> 4</label>
+                <label><input type="radio" name="rank-${method}" value="5"> 5</label>
+                <label><input type="radio" name="rank-${method}" value="6"> 6</label>
             `;
             container.appendChild(img);
             container.appendChild(controls);
@@ -330,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
             radio.disabled = !radio.checked && selectedValues.has(radio.value);
         });
         const totalRanked = document.querySelectorAll('.ranking-controls input:checked').length;
-        nextBtn.disabled = totalRanked !== 4;
+        nextBtn.disabled = totalRanked !== 6;
     }
 
     function resetRankings() {
