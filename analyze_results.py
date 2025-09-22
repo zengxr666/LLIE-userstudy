@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # --- Configuration ---
 RESULT_DIR = 'result'
-METHODS = ['GSAD', 'RetinexFormer', 'HVI', 'Ours']
+METHODS = ['GSAD', 'RetinexFormer', 'CID', 'Ours','LightenDiff']
 
 def parse_results(file_path):
     """
@@ -56,6 +56,23 @@ def analyze_and_plot(df, title_prefix):
     avg_ranks = df.groupby('method')['rank'].mean().sort_values()
     print(avg_ranks.to_string())
     print("-" * 35)
+
+    # --- Calculate Top1 and Top2 Percentages ---
+    method_counts = df['method'].value_counts()
+    top1_counts = df[df['rank'] == 1]['method'].value_counts()
+    top2_counts = df[df['rank'].isin([1, 2])]['method'].value_counts()
+    
+    print(f"\n{title_prefix}: Top1 and Top2 Percentages")
+    print("="*40)
+    print(f"{'Method':<15} {'Top1%':<10} {'Top2%':<10}")
+    print("-" * 40)
+    
+    for method in sorted(method_counts.index):
+        total = method_counts[method]
+        top1_pct = (top1_counts.get(method, 0) / total) * 100
+        top2_pct = (top2_counts.get(method, 0) / total) * 100
+        print(f"{method:<15} {top1_pct:>6.2f}%   {top2_pct:>6.2f}%")
+    print("="*40)
 
     # --- 2. Calculate and Plot Rank Distribution ---
     rank_counts = pd.crosstab(df['method'], df['rank'])
